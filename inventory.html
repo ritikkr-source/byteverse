@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h2 id="formTitle">Welcome Back</h2>
+            <p id="formSubtitle">Please enter your details to continue</p>
+        </div>
+        
+        <div id="signupFields" style="display:none;">
+            <input type="text" id="name" placeholder="Owner Name" class="auth-input">
+            <input type="text" id="shop" placeholder="Shop Name" class="auth-input">
+            <input type="text" id="location" placeholder="Location" class="auth-input">
+        </div>
+
+        <input type="email" id="email" placeholder="Email Address" class="auth-input">
+        <input type="password" id="password" placeholder="Password" class="auth-input">
+        
+        <button id="submitBtn" class="primary-btn">Login</button>
+
+        <p id="toggleText">
+            Don't have an account? <a href="#" id="toggleLink">Sign Up</a>
+        </p>
+    </div>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

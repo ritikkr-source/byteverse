@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar" id="sidebar">
+        <div class="logo"><h2>Smart AI</h2></div>
+        <nav class="menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="ai-chat.html">AI Chat</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <button id="logoutBtn" style="width:100%; background:#ef4444; border-radius: 8px;">Logout</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
+            <button id="openSidebar" class="menu-btn">☰</button>
+            <h2>AI Assistant</h2>
+        </header>
+
+        <div class="chat-card">
+            <div class="chat-header">
+                <h3>💼 Inventory Intelligence Assistant</h3>
+                <p>Ask me anything about your inventory, sales, or profit</p>
+            </div>
+            <div class="chat-wrapper">
+                <div id="chatBox" class="chat-box"></div>
+                <div class="chat-input-wrapper">
+                    <input type="text" id="userInput" placeholder="Ask me anything... (e.g., 'What's my total profit?')" class="chat-input-field">
+                    <button id="sendBtn" class="send-btn">
+                        <span>Send</span>
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-card">
+            <h4>💡 Try asking:</h4>
+            <div class="tips-grid">
+                <div class="tip-item">"What's my total profit?"</div>
+                <div class="tip-item">"Show me low stock items"</div>
+                <div class="tip-item">"Which products sold best?"</div>
+                <div class="tip-item">"How many products do I have?"</div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script type="module" src="js/ai-chat.js"></script>
+</body>
+</html>

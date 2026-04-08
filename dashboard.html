@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analytics - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar" id="sidebar">
+        <div class="logo"><h2>Smart AI</h2></div>
+        <nav class="menu">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="ai-chat.html">AI Chat</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <button id="logoutBtn" style="width:100%; background:#ef4444; border-radius: 8px; margin-top: auto;">Logout</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
+            <button id="openSidebar" class="menu-btn">☰</button>
+            <h2>Business Analytics</h2>
+        </header>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Products</h3>
+                <p id="totalProducts" style="font-size: 24px; font-weight: bold;">0</p>
+            </div>
+            <div class="card" style="border-top: 4px solid #ef4444;">
+                <h3>Low Stock</h3>
+                <p id="lowStock" style="font-size: 24px; font-weight: bold; color: #ef4444;">0</p>
+            </div>
+            <div class="card" style="border-top: 4px solid #f59e0b;">
+                <h3>Expiring Soon</h3>
+                <p id="expiring" style="font-size: 24px; font-weight: bold; color: #f59e0b;">0</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Top 3 Selling Products</h3>
+            <div id="topSellingBox"></div>
+        </div>
+
+        <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+            <div class="card">
+                <h3>Sales Performance</h3>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Profit Margin Trends</h3>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="profitChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script type="module" src="js/analytics.js"></script>
+</body>
+</html>

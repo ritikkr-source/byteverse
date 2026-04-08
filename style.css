@@ -1,0 +1,43 @@
+import { supabase } from "./supabase.js";
+
+let isSignup = false;
+const toggleText = document.getElementById("toggleText");
+const formTitle = document.getElementById("formTitle");
+const signupFields = document.getElementById("signupFields");
+const submitBtn = document.getElementById("submitBtn");
+
+function toggleForm() {
+    isSignup = !isSignup;
+    formTitle.innerText = isSignup ? "Sign Up" : "Login";
+    signupFields.style.display = isSignup ? "block" : "none";
+    submitBtn.innerText = isSignup ? "Create Account" : "Login";
+    toggleText.innerHTML = isSignup ? 
+        'Already have an account? <a href="#" id="toggleLink">Login</a>' : 
+        'Don\'t have account? <a href="#" id="toggleLink">Sign Up</a>';
+
+    document.getElementById("toggleLink").onclick = (e) => { e.preventDefault(); toggleForm(); };
+}
+
+document.getElementById("toggleLink").onclick = (e) => { e.preventDefault(); toggleForm(); };
+
+submitBtn.onclick = async () => {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (isSignup) {
+        const name = document.getElementById("name").value.trim();
+        const { error } = await supabase.from("owners").insert([{
+            name, email, password,
+            shop_name: document.getElementById("shop").value,
+            location: document.getElementById("location").value
+        }]);
+        if (error) alert(error.message);
+        else { alert("Signup successful!"); toggleForm(); }
+    } else {
+        const { data, error } = await supabase.from("owners").select("*").eq("email", email).eq("password", password).single();
+        if (data) {
+            localStorage.setItem("owner", JSON.stringify(data));
+            window.location.href = "dashboard.html";
+        } else alert("Invalid credentials");
+    }
+};

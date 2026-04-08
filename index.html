@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo"><h2>Smart AI</h2></div>
+            <nav class="menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="inventory.html">Inventory</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="ai-chat.html">AI Chat</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <button id="logoutBtn" style="width:100%; background:#ef4444; border-radius: 8px;">Logout</button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
+                <button id="openSidebar" class="menu-btn">☰</button>
+                <h2>Dashboard</h2>
+            </header>
+            <div class="cards">
+                <div class="card"><h3>Total Products</h3><p id="totalProducts">0</p></div>
+                <div class="card" style="border-top: 4px solid #ef4444;"><h3>Low Stock</h3><p id="lowStock" style="font-size: 24px; font-weight: bold; color: #ef4444;">0</p></div>
+                <div class="card"><h3>Total Profit</h3><p id="totalProfit">$0</p></div>
+            </div>
+            <div class="card"><h3>Stock Overview</h3><div class="chart-container" style="height: 300px;"><canvas id="stockChart"></canvas></div></div>
+        </main>
+    </div>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
